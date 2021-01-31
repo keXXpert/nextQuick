@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "mock": "json-server -w db.json -p 4500 -d 450"
+    "mock": "json-server -w db.json -p 4500 -d 1750"
   },
   "dependencies": {
     "next": "10.0.6",
