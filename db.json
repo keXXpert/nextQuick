@@ -1,0 +1,19 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "Post about health",
+            "body": "Check out our IG/Fb for yoga instructors on YouTube or Instagram with videos from beginner to advanced. You'll be a yoga guru in no time!⁠"
+        },
+        {
+            "id": 2,
+            "title": "Post about JavaScript",
+            "body": "Web browsers are not operating systems or application development environments. They’re document viewers. The effort to make them into something more than that has been one of the biggest wrong turns in the history of computing."
+        },
+        {
+            "id": 3,
+            "title": "Some other post",
+            "body": "The reader (me) is not able to verify this at all... How can you show that triangle inequality holds for geodesics with just this informal definition alone and *without* using sphere’s geometry? What am I missing?"
+        }
+    ]
+}

@@ -1,9 +1,19 @@
-import {useRouter} from 'next/router'
+import Link from "next/link";
 
-export default function Post() {
-    const router = useRouter()
-
+export default function Post({ post }) {
     return (
-        <h1>Post {router.query.postId}</h1>   
+        <>
+            <h1>{post.title}</h1>
+            <p>{post.body}</p>
+            <Link href='/posts'>Back to Posts</Link>
+        </>
     )
+}
+
+Post.getInitialProps = async ({ query }) => {
+    const response = await fetch('http://localhost:4500/posts/' + query.postId)
+    const post = await response.json()
+    return {
+        post
+    }
 }
