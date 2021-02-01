@@ -1,9 +1,15 @@
+import { NextPageContext } from "next";
 import Link from "next/link";
 import { useRouter } from 'next/router'
 import { useEffect, useState } from "react";
 import { MainLayout } from "../../components/MainLayout";
+import { MyPost } from "../../types/posts";
 
-export default function Post({ post: serverPost }) {
+interface PostPageProps {
+    post: MyPost
+}
+
+export default function Post({ post: serverPost }: PostPageProps) {
     const [post, setPost] = useState(serverPost)
     const router = useRouter()
 
@@ -41,7 +47,13 @@ export default function Post({ post: serverPost }) {
 //     }
 // }
 
-export async function getServerSideProps({ query, req }) {
+interface PostNextPageCOntext extends NextPageContext {
+    query: {
+        postId: string
+    }
+}
+
+export async function getServerSideProps({ query, req }: PostNextPageCOntext) {
     if (!req) {
         return { post: null }
     }

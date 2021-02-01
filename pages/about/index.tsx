@@ -1,7 +1,6 @@
 import Router from "next/router"
 import { MainLayout } from "../../components/MainLayout"
 
-
 export default function About() {
     const clickHandler = () => {
         Router.push('/')

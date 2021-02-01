@@ -1,7 +1,8 @@
 // import App from 'next/app'
+import type { AppProps /*, AppContext */ } from 'next/app'
 import '../styles/main.scss'
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }: AppProps) {
     return <>
         <Component {...pageProps} />
         {/* <style jsx global>{`

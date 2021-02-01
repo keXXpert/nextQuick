@@ -1,7 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
 
-export function MainLayout({ children, title = 'Next JS Demo App' }) {
+interface MainLayoutPropsTypes {
+    title?: string,
+    children: React.ReactNode
+}
+
+export function MainLayout({ children, title = 'Next JS Demo App' }: MainLayoutPropsTypes) {
     return <>
         <Head>
             <title>{title} | Next Course</title>
