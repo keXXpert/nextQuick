@@ -13,7 +13,7 @@ export default function Posts({ posts: serverPosts }: PostsPageProps) {
 
     useEffect(() => {
         async function fetchPosts() {
-            const response = await fetch('http://localhost:4500/posts')
+            const response = await fetch(process.env.API_URL + '/posts')
             const json = await response.json()
             setPosts(json)
         }
@@ -39,7 +39,7 @@ export default function Posts({ posts: serverPosts }: PostsPageProps) {
 
 Posts.getInitialProps = async ({ req }: NextPageContext) => {
     if (!req) return { posts: null }
-    const response = await fetch('http://localhost:4500/posts')
+    const response = await fetch(process.env.API_URL + '/posts')
     const posts: MyPost[] = await response.json()
     return {
         posts

@@ -15,7 +15,7 @@ export default function Post({ post: serverPost }: PostPageProps) {
 
     useEffect(() => {
         async function load() {
-            const response = await fetch('http://localhost:4500/posts/' + router.query.postId)
+            const response = await fetch(process.env.API_URL + '/posts/' + router.query.postId)
             const data = await response.json()
             setPost(data)
         }
@@ -57,7 +57,7 @@ export async function getServerSideProps({ query, req }: PostNextPageCOntext) {
     if (!req) {
         return { post: null }
     }
-    const response = await fetch('http://localhost:4500/posts/' + query.postId)
+    const response = await fetch(process.env.API_URL + '/posts/' + query.postId)
     const post = await response.json()
     return {
         props: {
